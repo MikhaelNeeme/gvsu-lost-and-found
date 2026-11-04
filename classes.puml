@@ -1,0 +1,55 @@
+@startuml classes
+set namespaceSeparator none
+class "<color:red>AuthenticationError</color>" as models.AuthenticationError {
+}
+class "Claim" as models.Claim {
+  claim_id : int
+  claimant_username : str
+  ownership_details : str
+  report_id : int
+}
+class "<color:red>DuplicateClaimError</color>" as models.DuplicateClaimError {
+}
+class "GVSUAuthService" as services.GVSUAuthService {
+  verify_credentials(username: str, password: str) -> bool
+}
+class "ItemReport" as models.ItemReport {
+  claims : List[Claim]
+  description : str
+  location : str
+  report_id : int
+  report_type : str
+  reporter_username : str
+  status : str
+  timestamp : str
+  matches_query(keyword: str, location: str, date: str) -> bool
+  update_status(new_status: str) -> None
+}
+class "LostAndFoundSystem" as system.LostAndFoundSystem {
+  auth_service
+  current_user : NoneType, Optional[User]
+  map_service
+  reports : Dict[int, ItemReport]
+  claim_item(report_id: int, ownership_details: str) -> Claim
+  get_report_details(report_id: int) -> ItemReport
+  log_in(username: str, password: str) -> bool
+  log_out() -> None
+  reject_duplicate_claim(report: ItemReport) -> None
+  report_found_item(description: str, time_found: str, location: str) -> ItemReport
+  report_lost_item(description: str, time_lost: str, location: str) -> ItemReport
+  search_for_item(keyword: str, location: str, date: str) -> List[ItemReport]
+  update_report_status(report_id: int, new_status: str) -> ItemReport
+}
+class "MapAPIService" as services.MapAPIService {
+  display_map_for_location(location: str) -> str
+  list_locations() -> List[str]
+}
+class "User" as models.User {
+  is_authenticated : bool
+  username : str
+}
+system.LostAndFoundSystem --> models.ItemReport : reports
+system.LostAndFoundSystem --> services.GVSUAuthService : auth_service
+system.LostAndFoundSystem --> services.MapAPIService : map_service
+models.User --* system.LostAndFoundSystem : current_user
+@enduml

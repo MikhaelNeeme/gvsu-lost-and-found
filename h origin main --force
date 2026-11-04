@@ -1,0 +1,75 @@
+* [33mcommit 0fa7d9f3fd45dbb387cde4c4e6dafb16fb70b3a1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+[31m|[m Author: Mikhael <mikhaelneeme@gmail.com>
+[31m|[m Date:   Wed Nov 4 01:54:50 2026 -0500
+[31m|[m 
+[31m|[m     Feat: add interactive CLI, unittest suite, UML puml, and pdoc HTML
+[31m|[m 
+[31m|[m  app.py                | 180 [32m+++++++++++++++[m
+[31m|[m  classes.puml          |  55 [32m+++++[m
+[31m|[m  html/app.html         | 652 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[31m|[m  html/index.html       | 220 [32m++++++++++++++++++[m
+[31m|[m  html/models.html      | 888 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[31m|[m  html/search.js        |  46 [32m++++[m
+[31m|[m  html/services.html    | 524 [32m+++++++++++++++++++++++++++++++++++++++++++[m
+[31m|[m  html/system.html      | 973 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[31m|[m  html/test_system.html | 881 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[31m|[m  packages.puml         |  15 [32m++[m
+[31m|[m  test_system.py        | 157 [32m+++++++++++++[m
+[31m|[m  11 files changed, 4591 insertions(+)
+[31m|[m   
+*   [33mcommit 9499607deb45542b70d2ae1ccffe78f3877cea05[m[33m ([m[1;33mtag: [m[1;33mv0.1.0[m[33m, [m[1;31morigin/feature/cli-tests-and-docs[m[33m, [m[1;32mfeature/cli-tests-and-docs[m[33m)[m
+[32m|[m[33m\[m  Merge: 5609830 b7a4362
+[32m|[m [33m|[m Author: Mikhael <mikhaelneeme@gmail.com>
+[32m|[m [33m|[m Date:   Wed Nov 4 01:46:09 2026 -0500
+[32m|[m [33m|[m 
+[32m|[m [33m|[m     Merge branch 'feature/core-use-cases' into main
+[32m|[m [33m|[m 
+[32m|[m * [33mcommit b7a4362a2a9638e4e2a69f9453b39630366dc1e9[m[33m ([m[1;31morigin/feature/core-use-cases[m[33m, [m[1;32mfeature/core-use-cases[m[33m)[m
+[32m|[m[32m/[m  Author: Mikhael <mikhaelneeme@gmail.com>
+[32m|[m   Date:   Wed Nov 4 01:46:09 2026 -0500
+[32m|[m   
+[32m|[m       Feat: implement UC1-UC7 controller methods in LostAndFoundSystem
+[32m|[m   
+[32m|[m    system.py | 158 [32m++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[32m|[m    1 file changed, 158 insertions(+)
+[32m|[m   
+*   [33mcommit 56098301ab126b0cba5af0b94e00ee7b7b0f062d[m
+[34m|[m[35m\[m  Merge: 9a5274c fa461f3
+[34m|[m [35m|[m Author: Mikhael <mikhaelneeme@gmail.com>
+[34m|[m [35m|[m Date:   Wed Nov 4 01:46:09 2026 -0500
+[34m|[m [35m|[m 
+[34m|[m [35m|[m     Merge branch 'feature/external-services' into main
+[34m|[m [35m|[m 
+[34m|[m * [33mcommit fa461f3fdee0cb5615929610f0cc1b6fbdb91279[m[33m ([m[1;31morigin/feature/external-services[m[33m, [m[1;32mfeature/external-services[m[33m)[m
+[34m|[m[34m/[m  Author: Mikhael <mikhaelneeme@gmail.com>
+[34m|[m   Date:   Wed Nov 4 01:46:09 2026 -0500
+[34m|[m   
+[34m|[m       Feat: implement GVSUAuthService and MapAPIService adapters
+[34m|[m   
+[34m|[m    services.py | 48 [32m++++++++++++++++++++++++++++++++++++++++++++++++[m
+[34m|[m    1 file changed, 48 insertions(+)
+[34m|[m   
+*   [33mcommit 9a5274c0198fc4b43b27d009ab1aa3cf975e0bf7[m
+[36m|[m[1;31m\[m  Merge: e0f118a 3308b2b
+[36m|[m [1;31m|[m Author: Mikhael <mikhaelneeme@gmail.com>
+[36m|[m [1;31m|[m Date:   Wed Nov 4 01:46:09 2026 -0500
+[36m|[m [1;31m|[m 
+[36m|[m [1;31m|[m     Merge branch 'feature/domain-models' into main
+[36m|[m [1;31m|[m 
+[36m|[m * [33mcommit 3308b2bb84fcee6b977c43588e20adcd31757cec[m[33m ([m[1;31morigin/feature/domain-models[m[33m, [m[1;32mfeature/domain-models[m[33m)[m
+[36m|[m[36m/[m  Author: Mikhael <mikhaelneeme@gmail.com>
+[36m|[m   Date:   Wed Nov 4 01:46:09 2026 -0500
+[36m|[m   
+[36m|[m       Feat: add User, Claim, and ItemReport domain models
+[36m|[m   
+[36m|[m    models.py | 97 [32m+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++[m
+[36m|[m    1 file changed, 97 insertions(+)
+[36m|[m 
+* [33mcommit e0f118adbd572ccce795201ee08b1edf5b5bd36b[m
+  Author: Mikhael <mikhaelneeme@gmail.com>
+  Date:   Wed Nov 4 01:46:09 2026 -0500
+  
+      Chore: initialize repository with .gitignore
+  
+   .gitignore | 4 [32m++++[m
+   1 file changed, 4 insertions(+)
